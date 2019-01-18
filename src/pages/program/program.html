@@ -1,0 +1,42 @@
+<ion-header>
+	<ion-scroll scrollX="true" style="width:100vw;height:50px;">
+		<ion-item>
+			<button click="active(20)" ion-button small round [ngClass]="{'activeclass': activebutton === 20 }" type="button">ALL
+			</button>
+			<button *ngFor="let genre of genre" (click)="active(genre.id_genre)" ion-button small round [ngClass]="{'activeclass': activebutton === genre.id_genre }" type="button">
+				{{genre.genre_name}}
+			</button>
+		</ion-item>
+	</ion-scroll>
+</ion-header>
+
+<ion-content>
+	<ion-item style="margin-top: 50px !important;">
+	<ion-row [hidden]="sa === 1" align-items-center>
+		<ion-col col-12 align-self-center>
+			<ion-spinner style="position: unset;" name="dots"></ion-spinner>
+		</ion-col>
+	</ion-row>
+	<ion-grid *ngFor="let content of contents | sortprogram: 'program_name' | slice:0:ax; let i=index">
+		<ion-row no-padding no-margin>
+			<ion-item no-lines style="text-transform: capitalize; color: dimgray;">{{content.key}}</ion-item>
+			<br>
+			<ion-col col-3 col-md-4 col-xl-12 *ngFor="let content of content.value | slice:0:limit; let i=index" no-padding no-lines>
+				<div *ngIf="content.ext_file === 'free'" (click)="pdfView(content)">
+					<div class="image-container-download" [style.background-image]="'url(assets/img/pdf-icon.png)'"></div>
+				</div>
+				<div *ngIf="content.ext_file === 'images'" (click)="goView(content)">
+					<div class="image-container av"[style.background-image]="viewPicture(content)">
+					</div>
+				</div>
+			</ion-col>
+			<button class="showmore" *ngIf="limit < content.value.length" ion-button outline (click)="tambah(8)" type="button">Show<br>More
+        </button>
+		</ion-row>
+	</ion-grid>
+	<img [hidden]="sa === 0" *ngIf='contents.length < 1' [src]="'assets/img/nodata-found.png'"/>          
+	<ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+		<ion-infinite-scroll-content></ion-infinite-scroll-content>
+	</ion-infinite-scroll>
+</ion-item>
+</ion-content>

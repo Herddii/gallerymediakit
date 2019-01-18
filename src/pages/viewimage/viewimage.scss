@@ -1,0 +1,37 @@
+page-viewimage {
+	ion-input,
+	ion-input::placeholder {
+		color: #fff;
+	}
+	super-tabs-toolbar{
+		display: none !important;
+	}
+	ion-header{
+		display: none !important;
+	}
+	.list-no-border{
+		vertical-align: middle;
+	}
+	.backbutton{
+		color: #a9a4a4;
+		font-size: 2.5em;
+		margin-left: 10px;
+		margin-top: 20px;
+	}
+	.imagesa {
+		display: flex !important;
+		height: 100%;
+		align-content: center !important;
+		align-items: center !important;
+	}
+	.icon-bawah {
+		ion-icon {
+			position: relative;
+			top: -62px;
+			padding: 5px;
+		}
+	}
+	.atas{
+		padding: 10px;
+	}
+}

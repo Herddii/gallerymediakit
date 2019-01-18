@@ -1,0 +1,293 @@
+page-gallery {
+  
+   super-tabs-toolbar {
+    > ion-toolbar.toolbar {
+      .tab-buttons-container {
+        .tab-buttons {
+          super-tab-button {
+            font-size: 10px;
+            ion-icon {
+              font-size: 29px;
+            }
+          }
+        }
+      }
+    }
+  }
+	.user-avatar {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    border-radius: 50%;
+    img {
+      vertical-align: middle;
+      border-radius: 50%;
+      padding: 2px;
+      margin-bottom: -5px;
+      margin-left: 5px;
+    }
+  }
+  .swipe-area {
+    height:100%;
+    width:100%;
+  }
+  .fixfix {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    transform: translateZ(0);
+    -moz-transform: translatez(0);
+    -ms-transform: translatez(0);
+    -o-transform: translatez(0);
+    -webkit-transform: translateZ(0);
+    -webkit-font-smoothing: antialiased;
+  }
+  .showmore{
+    font-size: 9px;
+    height: 7rem;
+    margin-top: 8px;
+    margin-left: 7px;
+    width: 7rem;
+    border-radius: 1px;
+  }
+
+  .col {
+    padding: 1.2px !important;
+    position: relative;
+    margin: 0;
+    min-height: 1px;
+}
+
+  ion-segment {
+    display: block;
+    white-space: nowrap;
+    font-size: 0;
+    overflow: auto;
+    // padding:10px;
+
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        display: none;
+    }
+
+    ion-segment-button.segment-button {
+        display: inline-block;
+        min-width: 120px;
+        width: auto !important;
+        height: 5.2rem !important;
+        font-size: 1.3rem !important;
+        padding: 5px !important;
+    }
+}
+  .activeclass {
+    background-color: white;
+    color: #00bcd4;
+
+  }
+
+  .av {
+    background: url("http://www.healthoptimizingmanila.com/sites/default/files/sample-image_25.png");
+    background-repeat: no-repeat;
+    background-size: 200px 200px;
+  }
+  .image-container {
+    background-size: cover;
+    min-height: 80px;
+    margin: 0px;
+    padding: 0px;
+  }
+  .image-container-download {
+    // min-width: 400px;
+    background-color: black;
+    background-size: cover;
+    min-height: 80px;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  ion-scroll[scroll-avatar]{
+    height: 60px;
+  }
+
+  ::-webkit-scrollbar{
+    display:none;
+  }
+  .card {
+    border-radius: 1rem
+  }
+  .trip {
+    overflow: hidden;
+
+    .background {
+      background-size: 100% auto;
+      background-position: center;
+
+      .background-filter {
+        height: 16rem;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.65));
+
+        .align-bottom {
+          width: 100%;
+
+          h6 {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.image-container {
+        min-height: 50px;
+        background-size: cover;
+    }
+
+    @media (min-width: 0px) {
+      @media (min-height: 420px){
+        ion-grid{
+          margin-top: 0px !important;
+        }
+        ion-scroll[scrollX] {
+          white-space: nowrap;
+          height: 40px;
+          overflow: hidden;
+          div.image {
+            height: 5vw;
+            width: 5vw;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          .selectable-icon{
+            margin: 10px 20px 10px 20px;
+            color: red;
+            font-size: 100px;
+          }
+
+          ion-avatar img{
+            margin: 10px;
+          }
+        }
+  .images {
+    column-count: 2;
+  }
+  .fixedbutton{
+    background-color: white !important;
+    margin-top: -26px;
+          // top: 63px;
+          z-index: 2;
+          position: fixed;
+        }
+        .positioning {
+          margin-top: 94px;
+          padding-top: 10px;
+        }
+      }
+       @media (min-height: 620px){
+        ion-grid{
+          margin-top: 0px !important;
+        }
+        ion-scroll[scrollX] {
+          white-space: nowrap;
+          height: 70px;
+          overflow: hidden;
+          div.image {
+            height: 5vw;
+            width: 5vw;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          .selectable-icon{
+            margin: 10px 20px 10px 20px;
+            color: red;
+            font-size: 100px;
+          }
+
+          ion-avatar img{
+            margin: 10px;
+          }
+        }
+  .images {
+    column-count: 2;
+  }
+  .fixedbutton{
+    background-color: white !important;
+    margin-top: -26px;
+    z-index: 2;
+    position: fixed;
+  }
+  .positioning {
+    margin-top: 94px;
+    padding-top: 10px;
+  }
+}
+
+    }
+
+    @media (min-width: 420px) {
+
+        .image-container {
+          background-size: cover;
+          min-height: 100px;
+          border: 1px solid gray;
+          margin: 0px;
+          padding: 0px;
+        }
+        .image-container-download {
+          background-color: black;
+          background-size: cover;
+          min-height: 100px;
+          border: 1px solid gray;
+          margin: 0px;
+          padding: 0px;
+        }
+        div.image {
+          height: 5vw;
+          width: 5vw;
+          border: 2px solid #fff;
+          border-radius: 50%;
+          display: inline-block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+    }
+
+    @media (min-width: 720px) {
+        .image-container {
+          background-size: cover;
+          min-height: 200px;
+          border: 1px solid gray;
+        }
+        .image-container-download {
+          background-color: black;
+          background-size: cover;
+          min-height: 200px;
+          border: 1px solid gray;
+        }
+        div.image {
+          height: 5vw;
+          width: 5vw;
+          border: 2px solid #fff;
+          border-radius: 50%;
+          display: inline-block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+    }
+
+    .one-image {
+        margin: 2px;
+    }
+
+.searchbar-input{
+    border-radius: 20px;
+  }

@@ -1,0 +1,29 @@
+<ion-content>
+	<ion-item class="card-background-page">
+		<ion-row [hidden]="sa === 1" align-items-center>
+			<ion-col col-12 align-self-center>
+				<ion-spinner style="position: unset;" name="dots"></ion-spinner>
+			</ion-col>
+		</ion-row>
+		<ion-grid *ngFor="let content of rate_card | sortprogram: 'week' | slice:0:ax; let i=index">
+			<ion-row *ngIf="i >= 0">
+				<ion-item style="text-transform: capitalize; color: dimgray;">Week {{content.key}}</ion-item>
+				<br>
+				<ion-col col-3 col-md-4 col-xl-12 *ngFor="let content of content.value | slice:0:limit; let i=index">
+					<div *ngIf="content.ext_file === 'free'" (click)="pdfView(content)">
+						<div class="image-container-download" [style.background-image]="'url(assets/img/pdf-icon.png)'"></div>
+					</div>
+					<div *ngIf="content.ext_file === 'images'" (click)="goView(content)">
+						<div class="image-container av" [style.background-image]="viewPicture(content)"></div>
+					</div>
+				</ion-col>
+				<button class="showmore" *ngIf="limit < content.value.length" ion-button outline (click)="tambah(8)" type="button">Show<br>More
+				</button>
+			</ion-row>
+		</ion-grid>
+		<img [hidden]="sa === 0" *ngIf='rate_card.length < 1' [src]="'assets/img/nodata-found.png'"/> 
+		<ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+			<ion-infinite-scroll-content></ion-infinite-scroll-content>
+		</ion-infinite-scroll>
+	</ion-item>
+</ion-content>

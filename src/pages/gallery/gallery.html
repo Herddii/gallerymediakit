@@ -1,0 +1,27 @@
+
+<ion-header>
+  <ion-navbar color="light" hideBackButton="true" *ngIf="!isSearchbarIsOpen">
+    <div class="user-avatar">
+      <img *ngFor="let profiles of prfile" src="../assets/imgs/{{profiles.IMAGES}}" (click)="viewProfile(profiles)">
+    </div>
+    <button ion-button color="light" *ngIf="!isSearchbarIsOpen" (click)="isSearchbarIsOpen=true">
+      <ion-icon name="search"></ion-icon>
+    </button>
+    <button ion-button float-right color="light" (click)="gotosetting()">
+      <ion-icon name="options"></ion-icon>
+    </button>
+   </ion-navbar>
+   <ion-navbar color="light" hideBackButton="true" *ngIf="isSearchbarIsOpen">
+     <ion-searchbar (ionInput)="getGallery($event)" showCancelButton='true' (ionCancel)="isSearchbarIsOpen=false"></ion-searchbar>
+   </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-border no-padding no-margin>
+     <super-tabs [config]="option" scrollTabs="true" tabsPlacement="top" toolbarBackground="light" toolbarColor="cs" indicatorColor="cs"
+     (tabSelect)="onTabSelect($event)">
+     <super-tab style="font-size: 3px;" *ngFor="let page of pages" [root]="page.pageName" [title]="page.title" [icon]="page.icon" [id]="page.id"></super-tab>
+   </super-tabs>
+</ion-content>
+

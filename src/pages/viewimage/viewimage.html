@@ -1,0 +1,22 @@
+<ion-header>
+	<ion-grid>
+		<ion-row>
+			<ion-col col-6>
+				<h6 text-center style="align-content: center !important; align-items: center !important; padding: 10px; color: white;">{{result.program_name}}</h6>
+			</ion-col>
+			<ion-col col-6>
+				<ion-icon style="align-content: center !important; align-items: center !important; padding: 10px; color: white; font-size: 2.3em; margin-top: 10px;" ios="ios-share-alt" md="md-share-alt" float-right (click)="pushchat(result)"></ion-icon>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-header>
+<ion-content  text-center style="background-color: black;">
+	<div class="imagesa">
+		<img style="text-align: center; width: 100%" src="http://10.22.253.64:8000/uploads/{{result.folder}}/{{result.id_filetype}}/{{result.content_file_download}}">
+	</div>
+</ion-content>
+<ion-footer style="padding: 10px;">
+	<ion-icon class='backbutton' ios="ios-close" md="md-close" (click)="goback()" float-left></ion-icon>
+	<ion-icon class='backbutton' ios="ios-share" md="md-share" (click)="share(result.id_content,result.folder,result.id_filetype,result.content_file_download)" float-right></ion-icon>
+	<ion-icon class='backbutton' ios="ios-download" md="md-download" (click)="download(result.id_content, result.folder, result.id_filetype, result.content_file_download)"float-right></ion-icon>
+</ion-footer>

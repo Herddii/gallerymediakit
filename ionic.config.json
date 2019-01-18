@@ -1,0 +1,7 @@
+{
+  "name": "cng",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

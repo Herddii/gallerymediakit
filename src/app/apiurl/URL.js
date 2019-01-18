@@ -1,0 +1,1 @@
+export const Url = 'https://10.22.253.64:8000/api/'
